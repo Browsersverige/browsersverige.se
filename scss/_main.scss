@@ -1,0 +1,303 @@
+
+#container {
+	@extend .clearfix;
+	max-width: 1400px;
+	margin: 0 auto;
+
+	@include between-breakpoints($mobile, $tablet-horizontal) {
+		padding-left: 10%;
+		padding-right: 10%;
+
+	}
+
+	article {
+		max-width: 60em;
+		margin: 0 auto;
+		margin-bottom: 4em;
+		padding: 2em 0 8em 0;
+
+		a {
+			color: $browsersverige;
+			text-decoration: none;
+		}
+		h2 {
+			line-height: 1.4;
+			font-size: 2.1em;
+			@include between-breakpoints($mobile, $tablet-horizontal) {
+				font-size: 1.4em;
+			}
+		}
+		p {
+			line-height: 1.6;
+			font-size: 1.4em;
+			@include between-breakpoints($mobile, $tablet-horizontal) {
+				font-size: 1em;
+			}
+		}
+
+		small {
+			font-size: 1.3em;
+			margin-top: 3em;
+			display: block;
+			span {
+				color: $browsersverige;
+				vertical-align: bottom;
+			}
+		}
+		.subtle {
+			font-size: .9em;
+			color: lighten(black, 75%);
+
+			a {
+				color: lighten(black, 75%);
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+#loader {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: center;
+	position: relative;
+	top: -4px;
+}
+
+::-webkit-scrollbar-track {
+	background: $browsersverige;
+}
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: $browsersverige_yellow;
+	border-radius: 5px;
+}
+
+body {
+	background: $browsersverige;
+	color: white;
+	// border: 12px solid red;
+	display: block;
+	min-height: 100%;
+}
+
+body.start {
+	background: $browsersverige;
+	color: white;
+}
+
+body.om {
+	background: lighten(black, 95%);
+	color: lighten(black, 35%);
+}
+
+body.om {
+	header {
+		background: $browsersverige;
+		color: white;
+	}
+}
+
+header {
+	text-align: center;
+	a {
+		color: white;
+		text-decoration: none;
+		display: block;
+	}
+	h1 {
+		font-size: 3em;
+		font-weight: 200;
+		position: relative;
+		display: inline-block;
+		padding: 1em;
+		@include between-breakpoints($mobile, $tablet) {
+			font-size: 2em;
+		}
+	}
+	input {
+		background: none;
+		border: none;
+		width: 310px;
+		padding: 2em;
+		margin: 0 auto;
+		color: $browsersverige_yellow;
+		&:focus,
+		&:active {
+			outline: none;
+		}
+	}
+}
+
+body.start {
+	header {
+		h1 {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			p {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}
+
+header h1 span {
+	color: $browsersverige_yellow;
+}
+
+
+header i {
+	float: right;
+	font-size: 2em;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	li {
+		width: 33.3333%;
+		float: left;
+		padding: 1em;
+		font-size: 5em;
+		text-align: center;
+		position: relative;
+
+		@include between-breakpoints($mobile, $mobile-horizontal) {
+			width: 100%;
+			font-size: 4em;
+			height: 300px;
+		}
+
+		@include between-breakpoints($mobile-horizontal, $tablet-horizontal) {
+			width: 50%;
+			font-size: 4em;
+			height: 400px;
+		}
+
+		.name {
+			font-size: .3em;
+			display: block;
+			margin-bottom: .6em;
+			@include between-breakpoints($mobile-horizontal, $tablet-horizontal) {
+				height: 80px;
+			}
+		}
+
+		.icon-holder {
+			position: relative;
+			padding-bottom: .4em;
+			display: block;
+			[class^="icon-"] {
+				color: $browsersverige_yellow;
+			}
+			.device-icon {
+				position: absolute;
+				right: -.2em;
+				top: 0;
+				@include between-breakpoints($mobile-horizontal, $tablet-horizontal) {
+					right: -.4em;
+					top: 0;
+				}
+				.device {
+					font-size: .5em;
+					position: absolute;
+					top: 0;
+					right: -.4em;
+					color: darken($browsersverige, 19%);
+				}
+				.ranking {
+					font-size: .25em;
+					position: absolute;
+					top: 3em;
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+.donut {
+	text-align: center;
+	padding: 2em 2em 4em 2em;
+	@include between-breakpoints($mobile, $tablet) {
+		display: none;
+	}
+	#browserdonut {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 900px;
+	}
+}
+
+footer[role="contentinfo"] {
+	background: darken($browsersverige, 19%);
+	@extend .clearfix;
+	width: 100%;
+	display:none;
+	padding: 2em 4em;
+	section {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+	&.active {
+		display:block;
+	}
+	margin-right: 0;
+	a {
+		display: block;
+		color: white;
+		text-decoration: none;
+		-webkit-font-smoothing: antialiased;
+		text-align: center;
+		&:nth-child(1) {
+			float: left;
+		}
+		&:nth-child(2) {
+			float: right;
+		}
+		font-size: 1.2em;
+
+		&:hover {
+			// background: darken($browsersverige, 24%);
+			color: $browsersverige_yellow;
+		}
+		@include between-breakpoints($mobile, $tablet) {
+			font-size: .8em;
+		}
+
+	}
+}
+
+::-webkit-input-placeholder {
+   color: white;
+   padding-left: 1em;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: white;
+	padding-left: 1em;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+   padding-left: 1em;
+
+}
+
+:-ms-input-placeholder {
+   color: white;
+   padding-left: 1em;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}

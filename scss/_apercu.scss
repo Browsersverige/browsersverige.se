@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Apercu";
+    src: url("../fonts/apercu-light-webfont.eot");
+    src: url("../fonts/apercu-light-webfont.eot?#iefix") format("embedded-opentype"),
+          url("../fonts/apercu-light-webfont.woff") format("woff"),
+          url("../fonts/apercu-light-webfont.ttf") format("truetype"),
+          url("../fonts/apercu-light-webfont.svg#aperculight") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Apercu-Bold";
+    src: url("../fonts/apercu-bold-webfont.eot");
+    src: url("../fonts/apercu-bold-webfont.eot?#iefix") format("embedded-opentype"),
+          url("../fonts/apercu-bold-webfont.woff") format("woff"),
+          url("../fonts/apercu-bold-webfont.ttf") format("truetype"),
+          url("../fonts/apercu-bold-webfont.svg#apercubold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+}
+
+$apercu: "Apercu";
+$apercu_bold: "Apercu-Bold";

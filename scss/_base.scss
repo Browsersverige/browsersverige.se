@@ -1,0 +1,128 @@
+// Imports -------------------------------------------------------------------
+
+// @import "compass";
+// @import "compass/layout";
+// @import "compass/css3";
+
+$browsersverige: #1640bd;
+$browsersverige_yellow: #FFF240;
+
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing   : border-box;    /* Firefox, other Gecko */
+  box-sizing        : border-box;         /* Opera/IE 8+ */
+  font-family: $apercu;
+}
+
+html {
+  height                  : 100%;
+  font-size               : 100%;
+  overflow-y              : scroll;
+  -webkit-text-size-adjust: 100%;
+  font-family: $apercu;
+  overflow-x: hidden;
+}
+
+/* Text selection */
+::-moz-selection {
+  background: $browsersverige;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: $browsersverige;
+  color: white;
+  text-shadow: none;
+}
+
+.heavy {
+  font-weight: 700;
+}
+
+.righter {
+  float: right;
+}
+
+.lefter {
+  float: left;
+}
+
+.centered {
+  text-align: center;
+}
+
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+/**
+ * Device constants
+ */
+
+$mobile            : 320px;
+$mobile-horizontal : 480px;
+$tablet            : 768px;
+$tablet-horizontal : 1024px;
+$desktop           : 1279px;
+$desktop-wide      : 1500px;
+$desktop-extra-wide: 1800px;
+$desktop-extra-extra-wide: 2560px;
+
+/**
+ * Media quieries, mobile first. http://ahrengot.com/web-development/sass-breakpoint-mixin/
+ */
+
+@mixin breakpoint($point, $value: 0) {
+  @if $point == mobile {
+    @media (min-width: 320px) { @content; }
+  }
+
+  @else if $point == mobile-horizontal {
+    @media (min-width: 480px) { @content; }
+  }
+
+  @else if $point == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+
+  @else if $point == tablet-horizontal {
+    @media (min-width: 1024px) { @content; }
+  }
+
+  @else if $point == desktop {
+    @media (min-width: 1280px) { @content; }
+  }
+
+  @else if $point == desktop-wide {
+    @media (min-width: 1500px) { @content; }
+  }
+
+  @else if $point == desktop-extra-wide {
+    @media (min-width: 1800px) { @content; }
+  }
+
+  @else if $point == desktop-extra-extra-wide {
+    @media (min-width: 2560px) { @content; }
+  }
+
+  @else {
+    @media ($point: $value) { @content; }
+  }
+}
+
+@mixin between-breakpoints($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

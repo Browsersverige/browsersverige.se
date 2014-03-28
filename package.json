@@ -1,0 +1,21 @@
+{
+  "name": "browsersverige",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-shell": "~0.2.2",
+    "grunt-contrib": "~0.7.0",
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-jekyll": "~0.3.6",
+    "load-grunt-tasks": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-yslow": "0.0.2",
+    "grunt-cache-bust": "~0.2.0"
+  }
+}
