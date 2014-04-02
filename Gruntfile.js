@@ -78,6 +78,9 @@ module.exports = function(grunt) {
     watch: {
         files: ['js/*', 'scss/*'],
         tasks: ['sass:prod', 'clean', 'concat', 'uglify:dev'],
+        options: {
+          spawn: false,
+        },
     },
 
     shell : {

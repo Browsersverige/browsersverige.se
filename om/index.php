@@ -46,7 +46,7 @@
 
     <p>
       <h2>Hur funkar det här?</h2>
-      <p>Browsersverige.se visar de 18 mest använda webbläsarna för desktop och mobilt (surfplattor och mobiltelefoner) december 2013-februari 2014.</p>
+      <p>Browsersverige.se visar de 18 mest använda webbläsarna för desktop och mobilt (surfplattor och mobiltelefoner) januari-mars 2014.</p>
 
       <h2>Varifrån hämtas statistiken?</h2>
       <p>Sifforna kommer från <a href="http://gs.statcounter.com/">StatCounter</a>. Data baserat på totalt 15 miljarder sidvisningar per månad samlat från mer än 3 miljarder sajter.
@@ -59,10 +59,10 @@
       <p>Vi tycker det är intressant att visa, inte bara vilken webbläsare som är mest populär, utan även visa vilken version som används mest. Vi har valt att visa denna typ av data till att börja med. Vill du se annan statistik sammanställd eller grupperad per enhetskategori/tidsintervall? Det kommer troligtvis här framöver. Håll utkik.</p>
 
       <h2>Uppdaterat?</h2>
-      <p>Siffrorna du ser är i tidsintervallet december 2013-februari 2014.</p>
+      <p>Siffrorna du ser är i tidsintervallet janurari-mars 2014. Uppdaterat 2014-04-01</p>
 
       <h2>Vem har gjort det här?</h2>
-      <p>Browsersverige är en liten tjänst skapad av <a href="http://twitter.com/urre">Urban Sandén (@urre)</a>. Med lite hjälp av lite PHP, cURL, JSON, Handlebars, Javascript, Sass, Grunt, Spin.js och IcoMoon. Typografi: Apercu.
+      <p>Browsersverige är en liten tjänst skapad av <a href="http://twitter.com/urre">Urban Sandén (@urre)</a>.
     </p>
 
     <a href="https://twitter.com/browsersverige" class="twitter-follow-button" data-show-count="false" data-lang="sv" data-size="large">Följ @browsersverige</a>

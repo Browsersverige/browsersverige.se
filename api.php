@@ -2,12 +2,11 @@
 
 require_once('lib/getdata.php');
 
-$url = 'http://gs.statcounter.com/chart.php?201402=undefined&bar=1&device=Desktop%20%26%20Mobile%20%26%20Tablet&device_hidden=desktop%2Bmobile%2Btablet&statType_hidden=browser_version&region_hidden=SE&granularity=monthly&statType=Browser%20Version&region=Sweden&fromInt=201312&toInt=201402&fromMonthYear=2013-12&toMonthYear=2014-02&multi-device=true&csv=1';
+$url = 'http://gs.statcounter.com/chart.php?201402=undefined&bar=1&device=Desktop%20%26%20Mobile%20%26%20Tablet&device_hidden=desktop%2Bmobile%2Btablet&statType_hidden=browser_version&region_hidden=SE&granularity=monthly&statType=Browser%20Version&region=Sweden&fromInt=201401&toInt=201403&fromMonthYear=2014-01&toMonthYear=2014-03&multi-device=true&csv=1';
 
 $returned_content = get_data($url);
 
 $stats = explode(',', $returned_content);
-
 
 $keys = array();
 $newArray = array();
@@ -21,7 +20,7 @@ function csvToArray($file, $delimiter) {
         	case 0:
         		$arr[$i][$j] = $lineArray[$j];
 
-        		# Remove everything for verson numbers behhind the dot (.), i.e ignore decimals
+        		# Remove everything for verson numbers behind the dot (.), i.e ignore decimals
         		// $str = explode('.', $arr[$i][$j]);
         		// $strk = $str[0];
         		// $arr[$i][$j] = $strk;
@@ -29,6 +28,7 @@ function csvToArray($file, $delimiter) {
         		# Remove empty zero ( 0)
         		$stro = str_replace(" 0", "", $arr[$i][$j]);
         		$arr[$i][$j] = $stro;
+
 
 	        	# Replace "IE" with "Internet Explorer"
 	        	if(strpos($arr[$i][$j],'IE') !== false):
@@ -116,8 +116,8 @@ for ($j = 0; $j < $count && $j < 18; $j++) {
 # Rename keys
 foreach ( $newArray as $k=>$v ) :
 
-  $newArray[$k] ['market'] = $newArray[$k] ['Market Share Perc. (Dec 2013 to Feb 2014)'];
-  unset($newArray[$k]['Market Share Perc. (Dec 2013 to Feb 2014)']);
+  $newArray[$k] ['market'] = $newArray[$k] ['Market Share Perc. (Jan to Mar 2014)'];
+  unset($newArray[$k]['Market Share Perc. (Jan to Mar 2014)']);
 
   $newArray[$k] ['browser'] = $newArray[$k] ['Browser Version'];
   unset($newArray[$k]['Browser Version']);

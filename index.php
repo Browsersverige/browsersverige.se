@@ -21,7 +21,7 @@
 
 <title>Browsersverige</title>
 
-<link rel="stylesheet" href="css/b.css?dd07f91f1b4350b9aae97ead3599371d" type="text/css" media="all" />
+<link rel="stylesheet" href="css/b.css?6074f6f0a40985ee9c719a6545970353" type="text/css" media="all" />
 
 <link rel="shortcut icon" type="image/png" href="/images/icon.png?94fe699d6fbbbaa0d9e39cc9ca4d5123"/>
 <link rel="apple-touch-icon-precomposed" href="/images/icon.png?94fe699d6fbbbaa0d9e39cc9ca4d5123" />
@@ -75,8 +75,10 @@
         </section>
       </footer>
 
+</div>
+</div>
 
-<script src="js/min/b.js?d112d8513cff1fe52e1e19493739806f"></script>
+<script src="js/min/b.js?514c4ae0f76ad68265e00735f72b35d2"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
