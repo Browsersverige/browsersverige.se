@@ -78,15 +78,14 @@
 }
 
 body {
-	background: $browsersverige;
 	color: white;
-	// border: 12px solid red;
 	display: block;
 	min-height: 100%;
 }
 
 body.start {
-	background: $browsersverige;
+	background: url(../images/sweden.jpg) center center fixed;
+	background-size: cover;
 	color: white;
 }
 
@@ -121,6 +120,8 @@ header {
 	}
 	input {
 		background: none;
+		background-color: none;
+		-webkit-appearance: none;
 		border: none;
 		width: 310px;
 		padding: 2em;
@@ -130,6 +131,15 @@ header {
 		&:active {
 			outline: none;
 		}
+	}
+}
+
+header {
+	input[type="search"]::-webkit-search-decoration,
+	input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-results-button,
+	input[type="search"]::-webkit-search-results-decoration {
+	  display: none;
 	}
 }
 
