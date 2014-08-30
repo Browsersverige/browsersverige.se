@@ -21,7 +21,7 @@
 
 <title>Browsersverige</title>
 
-<link rel="stylesheet" href="css/b.css?6074f6f0a40985ee9c719a6545970353" type="text/css" media="all" />
+<link rel="stylesheet" href="css/b.css?1549efb7c537b9a0fdce15a956da1535" type="text/css" media="all" />
 
 <link rel="shortcut icon" type="image/png" href="/images/icon.png?94fe699d6fbbbaa0d9e39cc9ca4d5123"/>
 <link rel="apple-touch-icon-precomposed" href="/images/icon.png?94fe699d6fbbbaa0d9e39cc9ca4d5123" />
@@ -34,10 +34,13 @@
 
 <body class="start">
 
+<a href="/om" class="about">Om</a>
+
 <header role="banner">
     <a href="/">
 	   <h1>Browser<span>sverige</span></h1><div id="loader"></div>
     </a>
+    <p class="tagline">Vad surfar svenskarna med?</p>
     <input type="search" id="comboBox" placeholder="Vad surfar svenskarna med?"/>
 </header>
 
@@ -78,7 +81,7 @@
 </div>
 </div>
 
-<script src="js/min/b.js?514c4ae0f76ad68265e00735f72b35d2"></script>
+<script src="js/min/b.js?d112d8513cff1fe52e1e19493739806f"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

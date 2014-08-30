@@ -31745,6 +31745,8 @@ if (!DevExpress.MOD_VIZ_SPARKLINES) {
 
 var spinner;
 
+var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
 Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
     lvalue = parseFloat(lvalue);
     rvalue = parseFloat(rvalue);
@@ -31789,7 +31791,7 @@ var browsers = {
             dataSource: dataSource,
             tooltip: {
                 enabled: true,
-                percentPrecision: 2,
+                percentPrecision: 4,
                 customizeText: function() {
                     return this.argumentText + " - " + this.valueText + "%";
                 }
@@ -31833,21 +31835,23 @@ var browsers = {
     },
     quickSearch: function() {
         $("#comboBox").focus();
-        $("#comboBox").on("keydown keypress keyup change", function() {
-            var search = browsers.toTitleCase(this.value);
-            var $li = $("li").hide();
-            if ($(this).val() !== "") {
-                $li.filter(function() {
-                    if ($(this).text().indexOf(search) >= 0) {
-                        return $(this).text().indexOf(search) >= 0;
-                    }
-                }).show();
-            } else {
-                console.log("empty");
-                $("li").show();
-                $("li").removeAttr("style");
-            }
-        });
+        if (!mobile) {
+            $("#comboBox").on("keydown keypress keyup change", function() {
+                var search = browsers.toTitleCase(this.value);
+                var $li = $("li").hide();
+                if ($(this).val() !== "") {
+                    $li.filter(function() {
+                        if ($(this).text().indexOf(search) >= 0) {
+                            return $(this).text().indexOf(search) >= 0;
+                        }
+                    }).show();
+                } else {
+                    console.log("empty");
+                    $("li").show();
+                    $("li").removeAttr("style");
+                }
+            });
+        }
     }
 };
 

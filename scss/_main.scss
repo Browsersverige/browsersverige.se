@@ -1,3 +1,6 @@
+body {
+	position: relative;
+}
 
 #container {
 	@extend .clearfix;
@@ -69,12 +72,15 @@
 	background: $browsersverige;
 }
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 16px;
 	height: 10px;
+	@include between-breakpoints($mobile, $tablet-horizontal) {
+		width: 10px;
+	}
 }
 ::-webkit-scrollbar-thumb {
 	background: $browsersverige_yellow;
-	border-radius: 5px;
+	border-radius: 0px;
 }
 
 body {
@@ -87,6 +93,10 @@ body.start {
 	background: url(../images/sweden.jpg) center center fixed;
 	background-size: cover;
 	color: white;
+	@include between-breakpoints($mobile, $mobile-horizontal) {
+		background-image: none;
+		background-color: $browsersverige;
+	}
 }
 
 body.om {
@@ -101,8 +111,25 @@ body.om {
 	}
 }
 
+.about {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: darken($browsersverige, 8%);
+	color: $browsersverige_yellow;
+	padding: 1em 2em;
+	text-decoration: none;
+	border: none;
+	z-index: 100;
+	@include between-breakpoints($mobile, $tablet) {
+		display: none;
+	}
+}
+
 header {
 	text-align: center;
+	position: relative;
 	a {
 		color: white;
 		text-decoration: none;
@@ -166,10 +193,19 @@ header i {
 	font-size: 2em;
 }
 
+.tagline {
+	display: none;
+	@include between-breakpoints($mobile, $tablet-horizontal) {
+		display: block;
+		color: white;
+	}
+}
+
 ul {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	@extend .clearfix;
 	li {
 		width: 33.3333%;
 		float: left;
@@ -179,9 +215,9 @@ ul {
 		position: relative;
 
 		@include between-breakpoints($mobile, $mobile-horizontal) {
-			width: 100%;
-			font-size: 4em;
-			height: 300px;
+			width: 50%;
+			font-size: 2em;
+			height: 160px;
 		}
 
 		@include between-breakpoints($mobile-horizontal, $tablet-horizontal) {
@@ -305,9 +341,18 @@ footer[role="contentinfo"] {
    padding-left: 1em;
 }
 
+/**
+ * Search
+ */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+input[type="search"] {
+	@include between-breakpoints($mobile, $tablet-horizontal) {
+		display: none;
+	}
 }
