@@ -1,6 +1,9 @@
 body {
 	position: relative;
 }
+.center {
+	text-align: center;
+}
 
 #container {
 	@extend .clearfix;
@@ -22,6 +25,11 @@ body {
 		a {
 			color: $browsersverige;
 			text-decoration: none;
+		}
+		a.btn {
+			color: white;
+			width: auto;
+			margin: 0 auto;
 		}
 		h2 {
 			line-height: 1.4;
@@ -74,10 +82,8 @@ body {
 ::-webkit-scrollbar {
 	width: 16px;
 	height: 10px;
-	@include between-breakpoints($mobile, $tablet-horizontal) {
-		width: 10px;
-	}
 }
+
 ::-webkit-scrollbar-thumb {
 	background: $browsersverige_yellow;
 	border-radius: 0px;
@@ -111,19 +117,60 @@ body.om {
 	}
 }
 
-.about {
+.menu {
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
-	background: darken($browsersverige, 8%);
-	color: $browsersverige_yellow;
-	padding: 1em 2em;
 	text-decoration: none;
 	border: none;
 	z-index: 100;
-	@include between-breakpoints($mobile, $tablet) {
-		display: none;
+	
+		position: static;
+		background: white;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		
+		li {
+			padding: 0;
+			flex: 1;
+			width: 33.333%;
+			height: auto;
+			font-size: 1.2em;
+			@include between-breakpoints($mobile, $tablet-horizontal) {
+				font-size: 1em;
+			}
+			a {
+				padding: 1.2em;
+				display: block;
+				color: $browsersverige;
+				&.active {
+					background: $browsersverige;
+					color: $browsersverige_yellow;
+					border-bottom: none;
+				}
+				@include between-breakpoints($mobile, $tablet-horizontal) {
+
+					padding: .6em;
+				}
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+				@include between-breakpoints($mobile, $tablet-horizontal) {
+					&:hover {
+						text-decoration: none;
+						border-bottom: none;
+					}
+				}				
+			}
+		}
 	}
 }
 
@@ -354,5 +401,38 @@ input[type="search"]::-webkit-search-results-decoration {
 input[type="search"] {
 	@include between-breakpoints($mobile, $tablet-horizontal) {
 		display: none;
+	}
+}
+
+.mt2 {
+	margin-top: 2rem;
+}
+
+pre {
+	width: auto;
+	display: inline-block;
+	color: lighten(black, 80%);
+	background: lighten(black, 15%);
+	padding: 1em 2em;
+}
+
+#container .article {
+	padding: 4em;
+	@include between-breakpoints($mobile, $tablet-horizontal) {
+		padding: .5em;
+	}
+}
+
+article {
+	.btn {
+		.icon {
+			fill: white;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		span {
+			display: inline-block;
+			vertical-align: middle;
+		}
 	}
 }

@@ -3,8 +3,22 @@
 require_once('lib/getdata.php');
 require_once('lib/helpers.php');
 
+if($CURRENT_DAY_NUMBER == 01):
+  $CURRENT_MONTH_NUMBER = $PREVIOUS_MONTH_NUMBER;
+  $CURRENT_MONTH_NAME_SHORT = $PREVIOUS_MONTH_NAME_SHORT;
+  if($CURRENT_MONTH_NUMBER < 10):
+    $CURRENT_MONTH_NUMBER = '0'.$CURRENT_MONTH_NUMBER;
+  endif;
+endif;
+
 # Get CSV URL from StatCounter
-$url = 'http://gs.statcounter.com/chart.php?201402=undefined&bar=1&device=Desktop%20%26%20Mobile%20%26%20Tablet&device_hidden=desktop%2Bmobile%2Btablet&statType_hidden=browser_version&region_hidden=SE&granularity=monthly&statType=Browser%20Version&region=Sweden&fromInt='.$YEAR_THIS.$TWO_MONTHS_BEFORE_NUMBER.'&toInt='.$YEAR_THIS.$CURRENT_MONTH_NUMBER.'&fromMonthYear='.$YEAR_THIS.'-'.$TWO_MONTHS_BEFORE_NUMBER.'&toMonthYear='.$YEAR_THIS.'-'.$CURRENT_MONTH_NUMBER.'&multi-device=true&csv=1';
+$url = 'http://gs.statcounter.com/chart.php?'.$YEAR_THIS.$CURRENT_MONTH_NUMBER.'=undefined&bar=1&device=Desktop%20%26%20Mobile%20%26%20Tablet&device_hidden=desktop%2Bmobile%2Btablet&statType_hidden=browser_version&region_hidden=SE&granularity=monthly&statType=Browser%20Version&region=Sweden&fromInt='.$YEAR_THIS.$CURRENT_MONTH_NUMBER.'&toInt='.$YEAR_THIS.$CURRENT_MONTH_NUMBER.'&fromMonthYear='.$YEAR_THIS.'-'.$CURRENT_MONTH_NUMBER.'&toMonthYear='.$YEAR_THIS.'-'.$CURRENT_MONTH_NUMBER.'&multi-device=true&csv=1';
+
+// URL
+# http://gs.statcounter.com/#desktop+mobile+tablet-browser_version-SE-monthly-201409-201409-bar
+
+// CSV
+// http://gs.statcounter.com/chart.php?01=undefined&bar=1&device=Desktop%20%26%20Mobile%20%26%20Tablet&device_hidden=desktop%2Bmobile%2Btablet&statType_hidden=browser_version&region_hidden=SE&granularity=monthly&statType=Browser%20Version&region=Sweden&fromInt=201601&toInt=201601&fromMonthYear=2016-01&toMonthYear=2016-01&multi-device=true&csv=1
 
 # Get URL data with cURL
 $returned_content = get_data($url);
@@ -107,22 +121,40 @@ for ($i = 0; $i < $count; $i++) {
 	endif;
 }
 
+# Prepend title in front of all items
+$newly = array();
+
 # Bring it all together
 for ($j = 0; $j < $count && $j < 18; $j++) {
   $d = array_combine($keys, $data[$j]);
   $newArray[$j] = $d;
+  array_push($newly, $d);
 }
 
 # Rename keys
 foreach ( $newArray as $k=>$v ) :
 
-  $newArray[$k] ['market'] = $newArray[$k] ['Market Share Perc. ('.$TWO_MONTHS_BEFORE_NAME_SHORT.' to '.$CURRENT_MONTH_NAME_SHORT.' '.$YEAR_THIS.')'];
-  unset($newArray[$k]['Market Share Perc. ('.$TWO_MONTHS_BEFORE_NAME_SHORT.' to '.$CURRENT_MONTH_NAME_SHORT.' '.$YEAR_THIS.')']);
+  $newArray[$k] ['market'] = $newArray[$k] ['Market Share Perc. ('.$CURRENT_MONTH_NAME_SHORT.' '.$YEAR_THIS.')'];
+  unset($newArray[$k]['Market Share Perc. ('.$CURRENT_MONTH_NAME_SHORT.' '.$YEAR_THIS.')']);
 
   $newArray[$k] ['browser'] = $newArray[$k] ['Browser Version'];
   unset($newArray[$k]['Browser Version']);
 
 endforeach;
+
+# Rename keys for ember
+foreach ( $newly as $k=>$v ) :
+
+  $newly[$k]['slug'] = slugify($v['Browser Version']);
+
+  $newly[$k] ['market'] = $newly[$k] ['Market Share Perc. ('.$CURRENT_MONTH_NAME_SHORT.' '.$YEAR_THIS.')'];
+  unset($newly[$k]['Market Share Perc. ('.$CURRENT_MONTH_NAME_SHORT.' '.$YEAR_THIS.')']);
+
+  $newly[$k] ['browser'] = $newly[$k] ['Browser Version'];
+  unset($newly[$k]['Browser Version']);
+
+endforeach;
+
 
 # Set correct content type
 header('Content-Type: application/json');

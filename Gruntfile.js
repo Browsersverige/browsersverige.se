@@ -25,11 +25,11 @@ module.exports = function(grunt) {
       dev: {
         options: {
           compress: false,
-          beautify: true,
+          beautify: false,
           mangle: false
         },
         files: {
-          'js/min/b.js': ['js/scripts.js']
+          'js/min/browsersverige.js': ['js/scripts.js']
         }
       },
       prod: {
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
           mangle: false
         },
         files: {
-          'js/min/b.js': ['js/scripts.js']
+          'js/min/browsersverige.js': ['js/scripts.js']
         }
       }
     },
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
       },
       assets: {
           files: [{
-              src: ['index.php']
+              src: ['index.php', './om/index.php', './apps/index.php']
           }]
       }
     },
@@ -99,6 +99,6 @@ module.exports = function(grunt) {
 
   //Default task(s).
   grunt.registerTask('default', ['sass:prod', 'clean', 'concat', 'uglify:prod', 'cacheBust']);
-  grunt.registerTask('deploy', ['cacheBust', 'shell:deploy']);
+  grunt.registerTask('deploy', ['shell:deploy']);
 
 };

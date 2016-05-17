@@ -17,7 +17,9 @@ Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
 
 var browsers = {
 
-		handlerData:function(resJSON){
+		handlerData:function(resJSON) {
+
+			console.log(resJSON);
 
 			var templateSource   = $("#browser-template").html(),
 
@@ -42,7 +44,7 @@ var browsers = {
 
 		  $.each(resJSON, function(idx, obj) {
 
-			dataSource.push({browserMarket: parseInt(obj.market), browserName: obj.browser});
+			dataSource.push({browserMarket: parseFloat(obj.market), browserName: obj.browser});
 
 		  });
 
