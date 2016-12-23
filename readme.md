@@ -16,10 +16,10 @@ Watch:
 
     php api.php
 
-Hosted on [Surge.sh](http://surge.sh)
-
 ## Deploy
+
+The website is hosted on [Surge.sh](http://surge.sh). To deploy:
 
     surge .
 
-(Of course, you have to be a collaborator on the Surge website to get access)
+Of course, you have to be a collaborator to get access.
