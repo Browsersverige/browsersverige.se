@@ -15,7 +15,7 @@ endif;
 $url = 'http://gs.statcounter.com/chart.php?'.$YEAR_THIS.$CURRENT_MONTH_NUMBER.'=undefined&bar=1&device=Desktop%20%26%20Mobile%20%26%20Tablet&device_hidden=desktop%2Bmobile%2Btablet&statType_hidden=browser_version&region_hidden=SE&granularity=monthly&statType=Browser%20Version&region=Sweden&fromInt='.$YEAR_THIS.$CURRENT_MONTH_NUMBER.'&toInt='.$YEAR_THIS.$CURRENT_MONTH_NUMBER.'&fromMonthYear='.$YEAR_THIS.'-'.$CURRENT_MONTH_NUMBER.'&toMonthYear='.$YEAR_THIS.'-'.$CURRENT_MONTH_NUMBER.'&multi-device=true&csv=1';
 
 // URL
-# http://gs.statcounter.com/#desktop+mobile+tablet-browser_version-SE-monthly-201409-201409-bar
+# http://gs.statcounter.com/#desktop+mobile+tablet-browser_version-SE-monthly-201612-201612-bar
 
 // CSV
 // http://gs.statcounter.com/chart.php?01=undefined&bar=1&device=Desktop%20%26%20Mobile%20%26%20Tablet&device_hidden=desktop%2Bmobile%2Btablet&statType_hidden=browser_version&region_hidden=SE&granularity=monthly&statType=Browser%20Version&region=Sweden&fromInt=201601&toInt=201601&fromMonthYear=2016-01&toMonthYear=2016-01&multi-device=true&csv=1
