@@ -3,10 +3,9 @@
 .sass-cache/*
 _gsdata_
 .DS_Store
-*/.DS_Store
 *.psd
-*.sublime-workspace
-node_modules/
-node_modules/*
-cli/
-cli/*
+node_modules
+bower_components
+cli
+js/min
+css/b.css.map
