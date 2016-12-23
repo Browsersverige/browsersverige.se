@@ -4799,8 +4799,6 @@ var browsers = {
 
 		handlerData:function(resJSON) {
 
-			console.log(resJSON);
-
 			var templateSource   = $("#browser-template").html(),
 
 			  template = Handlebars.compile(templateSource),
@@ -4919,7 +4917,6 @@ var browsers = {
 							}
 						}).show();
 					} else {
-						console.log('empty');
 						$("li").show();
 						$("li").removeAttr( "style" );
 					}

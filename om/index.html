@@ -1,8 +1,5 @@
-<!doctype html>
-<!--[if IE 7]> <html class="ie ie7" lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if IE 8]> <html class="ie ie8" lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if IE 9]> <html class="ie ie9" lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <!--<![endif]-->
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" xmlns:fb="https://www.facebook.com/2008/fbml">
 
 <head>
 
@@ -16,8 +13,8 @@
 <meta property='og:locale' content='sv_SE'/>
 <meta property="og:title" content="Browsersverige"/>
 <meta property="og:description" content="Vad surfar svenskarna med?"/>
-<meta property="og:url" content="http://browsersverige.se"/>
-<meta property="og:image" content="http://browsersverige.se/images/icon.png"/>
+<meta property="og:url" content="https://browsersverige.se"/>
+<meta property="og:image" content="https://browsersverige.se/images/icon.png"/>
 <meta property="og:site_name" content="Browsersverige"/>
 
 <title>Browsersverige | Om</title>
@@ -27,14 +24,22 @@
 <link rel="shortcut icon" type="image/png" href="../images/icon.png"/>
 <link rel="apple-touch-icon-precomposed" href="../images/icon.png" />
 
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
 </head>
 <body class="om">
 
-<a href="/" class="about">Start</a>
+<nav class="menu">
+  <ul>
+  <li>
+    <a href="/">Statistik</a>
+  </li>
+    <li>
+      <a class="active" href="/om">Om</a>
+    </li>
+    <li>
+      <a href="/apps">Appar</a>
+    </li>
+  </ul>
+</nav>
 
 <header role="banner">
 <a href="/">
@@ -51,7 +56,7 @@
       <p>Browsersverige.se visar de 18 mest använda webbläsarna för desktop och mobilt (surfplattor och mobiltelefoner)</p>
 
       <h2>Varifrån hämtas statistiken?</h2>
-      <p>Sifforna kommer från <a href="http://gs.statcounter.com/">StatCounter</a>. Data baserat på totalt 15 miljarder sidvisningar per månad samlat från mer än 3 miljarder sajter.
+      <p>Sifforna kommer från <a href="https://gs.statcounter.com/">StatCounter</a>. Data baserat på totalt 15 miljarder sidvisningar per månad samlat från mer än 3 miljarder sajter.
       Browsersverige hämtar data enbart för Sverige och tar inte hänsyn till hur siffror ser ut globalt/i andra länder.</p>
 
       <h2>Är detta verkligen korrekt?</h2>
@@ -63,17 +68,37 @@
       <p>Vi tycker det är intressant att visa, inte bara vilken webbläsare som är mest populär, utan även visa vilken version som används mest. Vi har valt att visa denna typ av data till att börja med. Vill du se annan statistik sammanställd eller grupperad per enhetskategori/tidsintervall? Det kommer troligtvis här framöver. Håll utkik.</p>
 
       <h2>Uppdaterat?</h2>
-      <p>Browsersverige uppdateras med nya siffror varje dag</p>
+      <p>Browsersverige uppdateras med nya siffror varje dag.</p>
 
       <h2>Vem ligger bakom Browsersverige?</h2>
-      <p>Browsersverige är en liten tjänst skapad av <a href="http://twitter.com/urre">Urban Sandén (@urre)</a>.
+      <p>Browsersverige är en liten tjänst skapad av <a href="https://twitter.com/urre">Urban Sandén (@urre)</a>.
     </p>
 
-    <a href="https://twitter.com/browsersverige" class="twitter-follow-button" data-show-count="false" data-lang="sv" data-size="large">Följ @browsersverige</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-    <a href="https://twitter.com/Urre" class="twitter-follow-button" data-show-count="false" data-lang="sv" data-size="large">Följ @Urre</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <a class="twitter-follow-button" data-size="large"
+      href="https://twitter.com/browsersverige">
+    Följ @browsersverige</a>
+
+    <a class="twitter-follow-button" data-size="large"
+      href="https://twitter.com/urre">
+    Följ @urre</a>
+
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+     
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+     
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
 
   </article>
 
@@ -84,11 +109,11 @@
 <footer role="contentinfo">
   <section>
       <a href="/">Gå till startsidan</a>
-      <a href="http://twitter.com/urre">av @urre</a>
+      <a href="https://twitter.com/urre">av Urban Sandén</a>
   </section>
 </footer>
 
-<script src="../js/min/b.js?d112d8513cff1fe52e1e19493739806f"></script>
+<script src="../js/min/browsersverige.js"></script>
 
 
 <script>

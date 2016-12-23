@@ -44,61 +44,52 @@ module.exports = function(grunt) {
     },
 
     sass: {
-        dev: {
-            options: {
-                style: 'expanded'
-            },
-                files: {
-            'css/b.css': 'scss/browsersverige.scss',
-            }
-        },
-        prod: {
-            options: {
-             style: 'compressed'
-            },
-        files: {
-            'css/b.css': 'scss/browsersverige.scss',
-            }
-        }
-    },
-
-    cacheBust: {
-      options: {
-        encoding: 'utf8',
-        algorithm: 'md5',
-        length: 32,
-      },
-      assets: {
-          files: [{
-              src: ['index.php', './om/index.php', './apps/index.php']
-          }]
-      }
-    },
-
-    watch: {
-        files: ['js/*', 'scss/*'],
-        tasks: ['sass:prod', 'clean', 'concat', 'uglify:dev'],
+      dev: {
         options: {
-          spawn: false,
+          style: 'expanded'
         },
-    },
-
-    shell : {
-        deploy : {
-            command : 'rsync -avz --delete --progress --exclude node_modules/ * root@31.192.231.90:../../var/www/browsersverige.se',
-            options: {
-                stdout: true
-            }
+        files: {
+          'css/b.css': 'scss/browsersverige.scss',
         }
+      },
+      prod: {
+        options: {
+         style: 'compressed'
+       },
+       files: {
+        'css/b.css': 'scss/browsersverige.scss',
+      }
     }
+  },
+
+  cacheBust: {
+    options: {
+      encoding: 'utf8',
+      algorithm: 'md5',
+      length: 32,
+    },
+    assets: {
+      files: [{
+        src: ['index.php', './om/index.php', './apps/index.php']
+      }]
+    }
+  },
+
+  watch: {
+    files: ['js/*', 'scss/*'],
+    tasks: ['sass:prod', 'clean', 'concat', 'uglify:dev'],
+    options: {
+      spawn: false,
+    },
+  },
+
 
 });
 
   // Load multiple grunt tasks using globbing patterns https://github.com/sindresorhus/load-grunt-tasks
   require('load-grunt-tasks')(grunt);
 
-  //Default task(s).
-  grunt.registerTask('default', ['sass:prod', 'clean', 'concat', 'uglify:prod', 'cacheBust']);
-  grunt.registerTask('deploy', ['shell:deploy']);
+  // Default task(s).
+  grunt.registerTask('default', ['sass:prod', 'clean', 'concat', 'uglify:prod']);
 
 };

@@ -1,8 +1,5 @@
-<!doctype html>
-<!--[if IE 7]> <html class="ie ie7" lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if IE 8]> <html class="ie ie8" lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if IE 9]> <html class="ie ie9" lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="sv" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <!--<![endif]-->
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" xmlns:fb="https://www.facebook.com/2008/fbml">
 
 <head>
 
@@ -16,16 +13,16 @@
 <meta property='og:locale' content='sv_SE'/>
 <meta property="og:title" content="Browsersverige för OS X"/>
 <meta property="og:description" content="Vad surfar svenskarna med?"/>
-<meta property="og:url" content="http://browsersverige.se"/>
-<meta property="og:image" content="http://browsersverige.se/images/icon.png"/>
+<meta property="og:url" content="https://browsersverige.se"/>
+<meta property="og:image" content="https://browsersverige.se/images/icon.png"/>
 <meta property="og:site_name" content="Browsersverige"/>
 
 <title>Browsersverige | Om</title>
 
 <link rel="stylesheet" href="../css/browsersverige.css?35ff5e67e05fa593762c15b20c32becb" type="text/css" media="all">
 
-<link rel="shortcut icon" type="image/png" href="http://browsersverige.se/images/icon.png"/>
-<link rel="apple-touch-icon-precomposed" href="http://browsersverige.se/images/icon.png" />
+<link rel="shortcut icon" type="image/png" href="https://browsersverige.se/images/icon.png"/>
+<link rel="apple-touch-icon-precomposed" href="https://browsersverige.se/images/icon.png" />
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/evil-icons/1.7.2/evil-icons.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/evil-icons/1.7.2/evil-icons.min.js"></script>
@@ -56,6 +53,38 @@
 
 <section id="container" role="main">
 
+<article role="article" class="center">
+
+    <h2>Browsersverige-cli</h2>
+    <p>
+      Ett enkelt command line-verktyg skriven i Node.js för att visa statistik.
+     </p>
+
+     <img class="mt2" src="https://browsersverige.se/images/terminal.png">
+
+     <h4>Installera</h4>
+     <p><pre>npm install -g browsersverige-cli</pre></p>
+
+     <h4>Visa hela listan</h4>
+     <p><pre>browsersverige</pre></p>
+
+     <h4>Visa topp 3</h4>
+     <p><pre>browsersverige -l 3</pre></p>
+     
+
+    <div class="p4 mt4 mb4">
+
+      <a href="https://github.com/urre/browsersverige-cli" class="btn btn--m btn--gray-dark btn--full">
+        <div data-icon="ei-sc-github" data-size="m"></div> 
+        <span>Github</span>
+      </a>
+
+      <p>MIT 2016 © Urban Sanden</p>
+
+    </div>
+
+</article>
+
   <article role="article" class="center">
 
     <p>
@@ -63,7 +92,7 @@
       <p>En enkel app för Mac som visas i statusfältet. Under utveckling.</p>
 
       <div class="p4 mt4 mb4">
-        <a href="../downloads/Browsersverige.zip" class="btn btn--l btn--green btn--full">
+        <a href="https://github.com/Browsersverige/Browsersverige-osx/releases/tag/0.1.0" class="btn btn--l btn--green btn--full">
           <div data-icon="ei-arrow-down" data-size="m"></div> 
           <span>Ladda hem</span>
         </a>
@@ -76,39 +105,7 @@
         <span>Github</span>
       </a>
 
-      <p>MIT 2015 © Urban Sanden</p>
-
-  </article>
-
-  <article role="article" class="center">
-
-      <h2>Browsersverige-cli</h2>
-      <p>
-        Ett enkelt command line-verktyg skriven i Node.js för att visa statistik.
-       </p>
-
-       <img class="mt2" src="http://browsersverige.se/images/terminal.png">
-
-       <h4>Installera</h4>
-       <p><pre>npm install -g browsersverige-cli</pre></p>
-
-       <h4>Visa hela listan</h4>
-       <p><pre>browsersverige</pre></p>
-
-       <h4>Visa topp 3</h4>
-       <p><pre>browsersverige -l 3</pre></p>
-       
-
-      <div class="p4 mt4 mb4">
-
-        <a href="https://github.com/urre/browsersverige-cli" class="btn btn--m btn--gray-dark btn--full">
-          <div data-icon="ei-sc-github" data-size="m"></div> 
-          <span>Github</span>
-        </a>
-
-        <p>MIT 2015 © Urban Sanden</p>
-
-      </div>
+      <p>MIT 2016 © Urban Sanden</p>
 
   </article>
 
@@ -119,11 +116,11 @@
 <footer role="contentinfo">
   <section>
       <a href="/">Gå till startsidan</a>
-      <a href="http://twitter.com/urre">av @urre</a>
+      <a href="https://twitter.com/urre">av Urban Sandén</a>
   </section>
 </footer>
 
-<script src="../js/min/browsersverige.js?8d0184435adfa5d2b96ff5c47828c950"></script>
+<script src="../js/min/browsersverige.js"></script>
 
 
 <script>

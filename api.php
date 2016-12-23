@@ -50,9 +50,9 @@ function csvToArray($file, $delimiter) {
 	        	endif;
 
             # Replace "iPhone" with "Safari iPhone"
-            if(strpos($arr[$i][$j],'iPhone') !== false):
-              $arr[$i][$j] = str_replace("iPhone","Safari iPhone", $arr[$i][$j]);
-            endif;
+            // if(strpos($arr[$i][$j],'iPhone') !== false):
+            //   $arr[$i][$j] = str_replace("iPhone","Safari iPhone", $arr[$i][$j]);
+            // endif;
 
             # Replace "Chrome for Android" with "Chrome Android"
             if(strpos($arr[$i][$j],'Chrome for Android') !== false):
@@ -114,6 +114,10 @@ for ($i = 0; $i < $count; $i++) {
 		$data[$i][] = 'opera';
 	elseif(preg_match('[Chrome]', $data[$i][0])) :
 		$data[$i][] = 'chrome';
+  elseif(preg_match('[Edge]', $data[$i][0])) :
+    $data[$i][] = 'edge';
+  elseif(preg_match('[Samsung]', $data[$i][0])) :
+    $data[$i][] = 'earth';
 	elseif(preg_match('[iPhone]', $data[$i][0])) :
 		$data[$i][] = 'safari';
 	else:
