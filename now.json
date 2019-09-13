@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "browsersverige",
+  "alias": "browsersverige",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "." }
+    }
+  ],
+	"regions": ["arn1", "bru"]
+}

@@ -18,7 +18,7 @@
 
 <title>Browsersverige</title>
 
-<link rel="stylesheet" href="css/b.css?1549efb7c537b9a0fdce15a956da1535" type="text/css" media="all" />
+
 
 <link rel="shortcut icon" type="image/png" href="/images/icon.png"/>
 <link rel="apple-touch-icon-precomposed" href="/images/icon.png" />
@@ -112,7 +112,7 @@
   </ul>
 </nav>
 
-<header role="banner">
+<header role="banner" hidden>
     <a href="/">
      <h1>Browser<span>sverige</span></h1><div id="loader"></div>
     </a>
@@ -122,29 +122,10 @@
 
 <div id="container"> </div>
 
-      <script id="browser-template" type="text/x-handlebars-template">
-      <ul>
-        {{#each browsers}}
-            <li>
-              <div class="icon-holder">
-
-                <svg class="icon icon-chrome"><use xlink:href="#icon-{{ this.icon }}"></use></svg>
-
-                <div class="device-icon">
-                  <span aria-hidden="true" class="icon-{{ this.device }} device"></span>
-                <span class="ranking">{{math @index "+" 1}}</span>
-              </div>
-
-              </div>
-              <span class="name">{{ this.browser }}</span>
-              <span class="number timer" data-from="0" data-to="{{ this.market }}">{{ this.market }}</span>%
-          </li>
-        {{/each}}
-    </ul>
-      </script>
+        <div id="browsers"></div>
 
       <section class="donut">
-        <div id="browserdonut"></div>
+        <canvas id="browserdonut" width="400" height="400"></canvas>
       </section>
 
 
@@ -158,7 +139,7 @@
 </div>
 </div>
 
-<script src="js/min/browsersverige.js"></script>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
