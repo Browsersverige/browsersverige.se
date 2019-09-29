@@ -2,6 +2,7 @@
 	"name": "browsersverige",
 	"version": "2.0.0",
 	"license": "MIT",
+	"engines": { "node": "10.x" },
 	"scripts": {
 		"clean": "rm -rf build",
 		"getdata": "node index.js",
@@ -34,9 +35,7 @@
 		"url-loader": "^2.1.0",
 		"webpack": "^4.39.3",
 		"webpack-cli": "^3.3.8",
-		"webpack-dev-server": "^3.8.0"
-	},
-	"dependencies": {
+		"webpack-dev-server": "^3.8.0",
 		"browser-logos": "github:alrra/browser-logos#46.1.0"
 	}
 }
