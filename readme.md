@@ -1,25 +1,17 @@
 # Browsersverige.se
 
-Old website made in the Grunt, jQuery-days :)
+## Vad surfar svenskarna med? (What do the Swedes surf with?)
 
-Still online updating every day: [Check it out](https://browsersverige.se/)
+Hosted on Zeit Now
 
-## Compile JavaScript and Sass
+Run
 
-    grunt
+```
+yarn start
+```
 
-Watch:
+Deploy
 
-    grunt watch
-
-## Fetch and create the "API". Saving into browsers.json
-
-    php api.php
-
-## Deploy
-
-The website is hosted on [Surge.sh](http://surge.sh). To deploy:
-
-    surge .
-
-Of course, you have to be a collaborator to get access.
+```
+yarn deploy
+```
