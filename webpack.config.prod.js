@@ -1,18 +1,16 @@
 /* global require */
 const path = require('path')
 const webpack = require('webpack')
-const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const ROOT = path.resolve(__dirname, './')
 const BUILD_DIR = path.resolve(ROOT, './build')
-const JS_DIR = path.resolve(ROOT, './js')
-const SCSS_DIR = path.resolve(ROOT, 'scss/')
-const IMAGES_DIR = path.resolve(ROOT, './images')
-const FONTS_DIR = path.resolve(ROOT, './fonts')
+const JS_DIR = path.resolve(ROOT, './src')
+const CSS_DIR = path.resolve(ROOT, './src')
+const IMAGES_DIR = path.resolve(ROOT, './src/images')
 const DATA_DIR = path.resolve(ROOT, './data')
 
 const config = {
@@ -21,22 +19,14 @@ const config = {
 	mode: 'development',
 	devtool: '',
 	entry: {
-		app: [
-			path.resolve(JS_DIR, 'dx.chartjs.js'),
-			path.resolve(JS_DIR, 'app.js'),
-			path.resolve(SCSS_DIR, 'main.scss')
-		]
+		app: [path.resolve(JS_DIR, 'app.js'), path.resolve(CSS_DIR, 'main.css')]
 	},
 	output: {
 		path: BUILD_DIR,
-		publicPath: '/',
-		filename: '[name].[hash].js'
+		filename: 'index_bundle.js'
 	},
 	resolve: {
 		extensions: ['.js']
-	},
-	optimization: {
-		// minimizer: [new TerserPlugin()]
 	},
 	module: {
 		rules: [
@@ -48,28 +38,8 @@ const config = {
 				}
 			},
 			{
-				test: /\.scss$/,
-				use: [
-					MiniCssExtractPlugin.loader,
-					{ loader: 'css-loader', options: {} },
-					{ loader: 'sass-loader', options: {} }
-				]
-			},
-			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader']
-			},
-			{
-				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							outputPath: './fonts/'
-						}
-					}
-				]
 			},
 			{
 				test: /\.(svg)$/,
@@ -92,25 +62,24 @@ const config = {
 	devServer: {
 		contentBase: path.join(__dirname, 'build'),
 		compress: true,
-		port: 9000
+		port: 9000,
+		historyApiFallback: true,
+		hot: true,
+		inline: true
+	},
+	optimization: {
+		minimizer: [new TerserPlugin()]
 	},
 	plugins: [
-		new webpack.ProvidePlugin({
-			$: 'jquery',
-			jQuery: 'jquery'
-		}),
 		new MiniCssExtractPlugin({
 			filename: 'css/b.[hash].css'
 		}),
 		new HtmlWebpackPlugin({
-			inject: true,
-			xhtml: true,
-			template: 'index-dev.html',
-			filename: 'index.html'
+			hash: true,
+			template: './src/index.html'
 		}),
 		new CopyWebpackPlugin([
 			{ from: IMAGES_DIR, to: path.resolve(BUILD_DIR, 'images') },
-			{ from: FONTS_DIR, to: path.resolve(BUILD_DIR, 'fonts') },
 			{ from: DATA_DIR, to: path.resolve(BUILD_DIR, 'data') }
 		])
 	]
