@@ -38,7 +38,7 @@ const pickIcon = browser => {
 		!browser.includes('iPad') &&
 		!browser.includes('iPad')
 	) {
-		return 'safari-ios'
+		return 'safari'
 	}
 }
 
