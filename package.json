@@ -8,7 +8,6 @@
 		"getdata": "node index.js",
 		"start": "webpack-dev-server --open",
 		"build": "webpack -p --progress --config webpack.config.prod.js",
-		"now-build": "yarn build",
 		"deploy": "now --prod"
 	},
 	"devDependencies": {
