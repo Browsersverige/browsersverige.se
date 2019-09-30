@@ -1,0 +1,16 @@
+// settings.json
+{
+  "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true
+  },
+	"[scss]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true
+  },
+  "[css]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true
+  },
+  "sassFormat.indent": "t"
+}
