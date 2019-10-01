@@ -36,7 +36,7 @@ h2 {
 }
 
 h3 {
-	font-size: calc(1.1vw);
+	font-size: calc(0.5em + 0.5vw);
 	text-transform: uppercase;
 	letter-spacing: 0.01em;
 	line-height: 1.5;

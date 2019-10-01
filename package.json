@@ -8,7 +8,8 @@
 		"getdata": "node index.js",
 		"start": "webpack-dev-server --open",
 		"build": "webpack -p --progress --config webpack.config.prod.js",
-		"deploy": "now --prod"
+		"deploy": "now --prod",
+		"release": "yarn getdata && yarn deploy"
 	},
 	"devDependencies": {
 		"@babel/core": "7.0.1",
