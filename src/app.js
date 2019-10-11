@@ -100,7 +100,12 @@ const checkFilters = e => {
 			showResults()
 		} else {
 			choices = removeChoice(choices, checkbox.id)
+			showResults()
 		}
+	}
+
+	if (choices.length === 0) {
+		resetFilters()
 	}
 }
 
