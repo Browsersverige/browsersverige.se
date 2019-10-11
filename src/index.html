@@ -53,10 +53,68 @@
 
 	<body>
 		<header class="header" role="banner">
-			<h1><span>Browser</span>sverige</h1>
+			<a href="/">
+				<h1><span>Browser</span>sverige</h1>
+			</a>
 			<p>Vad surfar svenskarna med?</p>
 		</header>
 
+		<div class="scroller">
+		<ul class="filter">
+				<li>
+					<input type="button" id="reset" value="Visa alla">
+				</li>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" value="firefox" id="firefox"/>
+						<div class="checkbox-visible"></div>
+						<span>Firefox</span>
+					</label>
+				</li>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" value="chrome" id="chrome"/>
+						<div class="checkbox-visible"></div>
+						<span>Chrome</span>
+					</label>
+				</li>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" value="safari" id="safari"/>
+						<div class="checkbox-visible"></div>
+						<span>Safari</span>
+					</label>
+				</li>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" value="safari-ios" id="safari-ios"/>
+						<div class="checkbox-visible"></div>
+						<span>Safari iOS</span>
+					</label>
+				</li>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" value="samsung-internet" id="samsung-internet"/>
+						<div class="checkbox-visible"></div>
+						<span>Samsung Internet</span>
+					</label>
+				</li>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" value="explorer" id="explorer"/>
+						<div class="checkbox-visible"></div>
+						<span>Internet Explorer</span>
+					</label>
+				</li>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" value="edge" id="edge"/>
+						<div class="checkbox-visible"></div>
+						<span>Edge</span>
+					</label>
+				</li>
+		</ul>
+		</div>
 		<section role="contentinfo" id="browsers"></section>
 
 		<footer class="footer" role="contentinfo">
