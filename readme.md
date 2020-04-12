@@ -11,23 +11,27 @@ Hosted on Zeit Now
 Run
 
 ```
-yarn start
+npm start
 ```
 
 Get browser statistics data
 
 ```
-yarn getdata
+npm run getdata
 ```
 
 Deploy
 
 ```
-yarn deploy
+npm run deploy
 ```
 
 Release (Get data and deploy)
 
 ```
-yarn release
+npm run release
 ```
+
+## Todo
+
+Zeit token: h8Qkrjs5mf0rJPZmDOvz4cIH
