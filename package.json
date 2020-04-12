@@ -11,7 +11,8 @@
 		"start": "webpack-dev-server --open",
 		"build": "webpack -p --progress --config webpack.config.prod.js",
 		"deploy": "npx now --prod",
-		"release": "npm run getdata && npm run build && npm run deploy"
+		"release": "npm run getdata && npm run build && npm run deploy",
+		"tweet": "node tweet.js"
 	},
 	"devDependencies": {
 		"@babel/core": "7.0.1",
