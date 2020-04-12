@@ -22,7 +22,7 @@ fetch(`https://browsersverige.se/data/browsers.json`)
         (browser) =>
           `${browser["Browser Version"]} - ${
             Object.values(browser["Market Share Perc"])[0]
-          }`
+          }%`
       )
       .join("\n");
     Bot.tweet(`Topp 10: \n\n${list}\n\nhttps://browsersverige.se`);
