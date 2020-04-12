@@ -72,7 +72,15 @@ const config = {
 		}),
 		new HtmlWebpackPlugin({
 			hash: true,
+			inject: true,
+			filename: 'index.html',
 			template: './src/index.html'
+		}),
+		new HtmlWebpackPlugin({
+			hash: true,
+			inject: true,
+			filename: './om/index.html',
+			template: './src/om/index.html'
 		}),
 		new CopyWebpackPlugin([
 			{ from: IMAGES_DIR, to: path.resolve(BUILD_DIR, 'images') },
