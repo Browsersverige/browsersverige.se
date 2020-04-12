@@ -25,5 +25,5 @@ fetch(`https://browsersverige.se/data/browsers.json`)
           }`
       )
       .join("\n");
-    Bot.tweet(`Topp 10: ${list}\n\nhttps://browsersverige.se`);
+    Bot.tweet(`Topp 10: \n\n${list}\n\nhttps://browsersverige.se`);
   });
