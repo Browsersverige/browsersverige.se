@@ -43,6 +43,36 @@ h3 {
 	opacity: 0.5;
 }
 
+article {
+	max-width: 90vw;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 60em) {
+		article {
+		max-width: 50vw;
+	}
+}
+
+article h1 {
+	font-size: 1.912em;
+}
+article h2 {
+	font-size: 1.616em;
+}
+article h3 {
+	font-size: 1.471em;
+}
+article h4 {
+	font-size: 1.3em;
+}
+article h5 {
+	font-size: 1.243em;
+}
+article h6 {
+	font-size: 1.132em;
+}
+
 .header {
 	padding-top: 3vw;
 	padding-bottom: 3vw;
@@ -62,6 +92,9 @@ h3 {
 .footer {
 	text-align: center;
 	padding: 6vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #browsers {

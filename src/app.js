@@ -65,7 +65,7 @@ const renderResult = arr => {
 				)}">
 						<img src="/images/${pickIcon(
 							browserVersion
-						)}.svg" alt=´${browserVersion}´ role="presentation"/>
+						)}.svg" alt="${browserVersion}" role="presentation"/>
 						<h2>${percentage}<span>%</span></h2>
 						<h3>${browserVersion}</h3>
 					</div>

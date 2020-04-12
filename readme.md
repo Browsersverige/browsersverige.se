@@ -31,7 +31,3 @@ Release (Get data and deploy)
 ```
 npm run release
 ```
-
-## Todo
-
-Zeit token: h8Qkrjs5mf0rJPZmDOvz4cIH

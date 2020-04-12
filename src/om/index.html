@@ -48,7 +48,7 @@
 		<meta itemprop="image" content="https://browsersverige.se/images/og.jpg">
 
 		<link rel="stylesheet" href="https://use.typekit.net/lqe7wse.css" />
-		<title>Browsersverige</title>
+		<title>Om | Browsersverige</title>
 	</head>
 
 	<body>
@@ -59,63 +59,56 @@
 			<p>Vad surfar svenskarna med?</p>
 		</header>
 
-		<div class="scroller">
-		<ul class="filter">
-				<li>
-					<input type="button" id="reset" value="Visa alla">
-				</li>
-				<li>
-					<label class="checkbox">
-						<input type="checkbox" value="firefox" id="firefox"/>
-						<div class="checkbox-visible"></div>
-						<span>Firefox</span>
-					</label>
-				</li>
-				<li>
-					<label class="checkbox">
-						<input type="checkbox" value="chrome" id="chrome"/>
-						<div class="checkbox-visible"></div>
-						<span>Chrome</span>
-					</label>
-				</li>
-				<li>
-					<label class="checkbox">
-						<input type="checkbox" value="safari" id="safari"/>
-						<div class="checkbox-visible"></div>
-						<span>Safari</span>
-					</label>
-				</li>
-				<li>
-					<label class="checkbox">
-						<input type="checkbox" value="safari-ios" id="safari-ios"/>
-						<div class="checkbox-visible"></div>
-						<span>Safari iOS</span>
-					</label>
-				</li>
-				<li>
-					<label class="checkbox">
-						<input type="checkbox" value="samsung-internet" id="samsung-internet"/>
-						<div class="checkbox-visible"></div>
-						<span>Samsung Internet</span>
-					</label>
-				</li>
-				<li>
-					<label class="checkbox">
-						<input type="checkbox" value="explorer" id="explorer"/>
-						<div class="checkbox-visible"></div>
-						<span>Internet Explorer</span>
-					</label>
-				</li>
-				<li>
-					<label class="checkbox">
-						<input type="checkbox" value="edge" id="edge"/>
-						<div class="checkbox-visible"></div>
-						<span>Edge</span>
-					</label>
-				</li>
-		</ul>
-		</div>
-		<section role="contentinfo" id="browsers"></section>
+		<main role="main">
+			<article role="article">
+
+					<h1>Hur funkar det här?</h1>
+					<p>Browsersverige visar de mest använda webbläsarna för desktop och mobilt.</p>
+
+					<h2>Varifrån hämtas statistiken?</h2>
+					<p>Sifforna kommer från <a href="https://gs.statcounter.com/">StatCounter. </a>.
+					Browsersverige hämtar data enbart för Sverige och visar inte hur siffror ser ut globalt/i andra länder.</p>
+
+					<h2>Är detta verkligen korrekt?</h2>
+					<p>StatCounter baserar sina data på <a href="https://gs.statcounter.com/faq#methodology">sidvisningar</a>. Det finns givetvis olika sätt att mäta dessa siffror. Detta är ett sätt. Det ger en ganska bra bild. Browsersverige är baserat på färska siffror, och inte hur det såg ut tidigare. Landskapet förändras snabbt.</p>
+
+					<p>Observera att det är stor skillnad på statistik globalt jämfört med hur det ser ut i Sverige. Browsersverige visar hur det ser ut i Sverige. </p>
+
+					<h2>Varför visas det så här?</h2>
+					<p>Vi tycker det är intressant att visa, inte bara vilken webbläsare som är mest populär, utan även visa vilken version som används mest. Vi har valt att visa denna typ av data till att börja med. Vill du se annan statistik sammanställd eller grupperad per enhetskategori/tidsintervall? Det kommer troligtvis här framöver. Håll utkik.</p>
+
+					<h2>Uppdaterat?</h2>
+					<p>Browsersverige uppdateras med nya siffror varje dag.</p>
+
+					<h2>Vem ligger bakom Browsersverige?</h2>
+					<p>Browsersverige är en liten tjänst skapad av <a href="https://twitter.com/urre">Urban Sandén (@urre)</a>.</p>
+
+					<a class="twitter-follow-button" data-size="large"
+						href="https://twitter.com/browsersverige">
+					Följ @browsersverige</a>
+
+					<a class="twitter-follow-button" data-size="large"
+						href="https://twitter.com/urre">
+					Följ @urre</a>
+
+					<script>window.twttr = (function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0],
+							t = window.twttr || {};
+						if (d.getElementById(id)) return t;
+						js = d.createElement(s);
+						js.id = id;
+						js.src = "https://platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore(js, fjs);
+
+						t._e = [];
+						t.ready = function(f) {
+							t._e.push(f);
+						};
+
+						return t;
+					}(document, "script", "twitter-wjs"));</script>
+			</article>
+		</main>
 
 		<footer class="footer" role="contentinfo">
 			<span>Av <a href="https://urre.me">Urban Sanden</a></span>
