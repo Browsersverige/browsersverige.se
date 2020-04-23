@@ -6,7 +6,7 @@ Simple site showing which browsers the Swedes use to browse the Internet.
 
 ![](https://browsersverige.se/images/og.jpg)
 
-Hosted on Zeit Now
+Hosted on Vercel
 
 Run
 
