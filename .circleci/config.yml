@@ -43,7 +43,7 @@ workflows:
   commit-workflow:
     jobs:
       - build
-  daily-workflow:
+  weekly-workflow:
     triggers:
       - schedule:
           cron: '0 14 * * 1'
