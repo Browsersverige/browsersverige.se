@@ -50,6 +50,6 @@ workflows:
           filters:
             branches:
               only:
-                - dev
+                - master
     jobs:
       - build
