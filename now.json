@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "browsersverige",
   "builds": [
     {
       "src": "package.json",
