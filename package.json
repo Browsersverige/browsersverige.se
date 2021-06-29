@@ -10,7 +10,7 @@
 		"getdata": "node index.js",
 		"start": "webpack-dev-server --open",
 		"build": "webpack -p --progress --config webpack.config.prod.js",
-		"deploy": "npx now --prod",
+		"deploy": "npx vercel --prod",
 		"release": "npm run getdata && npm run build && npm run deploy",
 		"tweet": "node tweet.js"
 	},
