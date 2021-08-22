@@ -31,8 +31,8 @@ jobs:
           command: npm run build
 
       - run:
-          name: Deploy on ZEIT now
-          command: npx now --prod -t ${NOW_TOKEN} --confirm --local-config ${CIRCLE_WORKING_DIRECTORY}/now.json
+          name: Deploy on Vercel
+          command: npm run build
 
       - run:
           name: Tweet
